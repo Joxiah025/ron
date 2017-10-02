@@ -1,0 +1,48 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color='secondary'>
+    <ion-title mode="ios">ReachOut Nigeria</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<form [formGroup]="myForm" (ngSubmit)="login(myForm.value)">
+  <ion-list inset>
+
+  <ion-item>
+    <ion-label stacked>Fullname</ion-label>
+    <ion-input type="text" name="fname" formControlName="fname"></ion-input>
+  </ion-item>
+<ion-item>
+    <ion-label stacked>Email</ion-label>
+    <ion-input type="email" name="email" formControlName="email"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label stacked>Phone</ion-label>
+    <ion-input type="tel" name="phone" formControlName="phone"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label stacked>Chapter</ion-label>
+    <ion-input type="text" name="chapter" formControlName="chapter"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label stacked>Zone</ion-label>
+    <ion-input type="text" name="zone" formControlName="zone"></ion-input>
+  </ion-item>
+
+  <div class="submit">
+    <button ion-button color="secondary" block>Proceed</button>
+  </div>
+
+</ion-list>
+</form>
+</ion-content>

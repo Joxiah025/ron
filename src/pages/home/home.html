@@ -1,14 +1,65 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="secondary">
     <ion-title>
-      Ionic Blank
+      ReachOut Nigeria
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <ion-fab top right edge>
+    <button ion-fab mini color="light" (click) = "gotoContact()">
+      <ion-icon name="ios-people"></ion-icon>
+    </button>
+    <!-- <ion-fab-list>
+      <button ion-fab><ion-icon name="logo-facebook"></ion-icon></button>
+      <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>
+      <button ion-fab><ion-icon name="logo-vimeo"></ion-icon></button>
+      <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>
+    </ion-fab-list> -->
+  </ion-fab>
+
+  <form [formGroup]="myForm" (ngSubmit)="addContact(myForm.value)">
+  <ion-list inset no-lines>
+
+  <ion-item>
+    <ion-icon name="person" item-start ></ion-icon>
+    <ion-input type="text" placeholder="Name *" name="fname" formControlName="fname"></ion-input>
+  </ion-item>
+<ion-item>
+    <ion-icon name="mail" item-start ></ion-icon>
+    <ion-input type="email" placeholder="Email *" name="email" formControlName="email"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-icon name="phone-portrait" item-start ></ion-icon>
+    <ion-input type="tel" name="phone" placeholder="Phone * " formControlName="phone"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-icon name="pin" item-start ></ion-icon>
+    <ion-input type="text" name="location" placeholder="Location *" formControlName="location"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-icon name="medal" item-start ></ion-icon>
+    <ion-input type="text" name="dept" placeholder="Department" formControlName="dept"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-icon name="pint" item-start ></ion-icon>
+    <ion-input type="text" placeholder="level" name="level" formControlName="level"></ion-input>
+  </ion-item>
+  <ion-list-header>
+      Others
+    </ion-list-header>
+  <ion-item>
+       <ion-label>Final Year Student?</ion-label> 
+      <ion-checkbox color="secondary" value="1"  name="finals" formControlName="finals"></ion-checkbox>
+  </ion-item>
+
+  <div class="submit">
+    <button ion-button color="secondary" outline block icon-left>
+      <ion-icon name="person-add" ></ion-icon> Add
+    </button>
+  </div>
+
+</ion-list>
+</form>
 </ion-content>
